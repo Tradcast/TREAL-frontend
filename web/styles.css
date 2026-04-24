@@ -1,0 +1,51 @@
+:root {
+  color-scheme: dark;
+  --bg: #070b14;
+  --panel: #121a2d;
+  --panel-2: #0f1628;
+  --text: #f2f5ff;
+  --muted: #9ca7c7;
+  --accent: #4fd1c5;
+  --accent-2: #39b3f3;
+  --border: #25304f;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: linear-gradient(120deg, #070b14, #0d1324 40%, #0b1a2a); color: var(--text); }
+.app-shell { min-height: 100vh; display: grid; grid-template-columns: 280px 1fr; }
+.sidebar { border-right: 1px solid var(--border); background: rgba(8, 13, 24, 0.85); padding: 28px 20px; display: flex; flex-direction: column; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand h1 { font-size: 1.45rem; margin: 0; letter-spacing: 0.08em; }
+.brand-dot { width: 14px; height: 14px; border-radius: 999px; background: linear-gradient(120deg, var(--accent), var(--accent-2)); }
+.tagline { margin: 10px 0 26px; color: var(--muted); font-size: 0.92rem; }
+.page-nav { display: flex; flex-direction: column; gap: 10px; }
+.nav-btn { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; text-align: left; cursor: pointer; font-weight: 600; }
+.nav-btn.active { background: linear-gradient(120deg, rgba(79, 209, 197, 0.16), rgba(57, 179, 243, 0.18)); border-color: var(--accent); }
+.content { padding: 34px; }
+.page { display: none; max-width: 900px; }
+.page.active { display: block; }
+.card { margin-top: 16px; padding: 18px; border-radius: 14px; border: 1px solid var(--border); background: var(--panel); }
+.muted { color: var(--muted); }
+.setup-form { display: grid; gap: 14px; }
+.setup-form label { display: grid; gap: 7px; font-size: 0.95rem; }
+.setup-form input { border: 1px solid var(--border); border-radius: 9px; background: #0b1122; color: var(--text); padding: 10px 11px; }
+.setup-form button { border: 0; border-radius: 10px; padding: 11px 14px; background: linear-gradient(120deg, #2bb7aa, #2d95c6); color: #04101f; font-weight: 700; cursor: pointer; }
+.panel { background: #ffffff; border: 1px solid #d9dee9; border-radius: 14px; box-shadow: 0 10px 24px rgba(14, 20, 31, 0.12); }
+.trade-layout { background: #ebeff2; color: #111827; border-radius: 16px; padding: 10px; }
+.trade-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; margin-bottom: 8px; }
+.trade-brand { display: flex; align-items: center; gap: 10px; }
+.trade-logo { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #d76afd; color: #fff; font-weight: 800; }
+.trade-brand h2 { margin: 0; font-size: 1rem; color: #1f2937; }
+#trade-status { margin: 0; color: #10b981; font-size: 0.8rem; font-weight: 600; }
+.exit-btn { border: 1px solid #9ee3bf; background: #ecfdf3; color: #0e9f6e; border-radius: 10px; padding: 9px 12px; font-weight: 700; cursor: pointer; }
+.trade-stats-grid, .trade-balance-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 8px; }
+.trade-balance-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.stat { padding: 9px; text-align: center; }
+.stat span { display: block; color: #6b7280; font-size: 0.75rem; }
+.stat strong { color: #111827; font-size: 1rem; }
+.stat .profit { color: #10b981; }
+.chart-panel { margin-bottom: 8px; padding: 8px; height: 280px; }
+.chart-placeholder { width: 100%; height: 100%; border-radius: 12px; background: linear-gradient(180deg, #ffffff, #f5f8fa); border: 1px solid #e5e7eb; display: grid; align-items: end; overflow: hidden; }
+.chart-line { width: 100%; height: 58%; background: linear-gradient(to top, rgba(16, 185, 129, 0.22), rgba(16, 185, 129, 0.05)), linear-gradient(120deg, #9ca3af 20%, #10b981 38%, #ef4444 58%, #3b82f6 86%); clip-path: polygon(0% 92%, 6% 80%, 12% 86%, 18% 60%, 28% 66%, 35% 44%, 43% 58%, 50% 38%, 61% 42%, 70% 26%, 79% 33%, 88% 18%, 100% 22%, 100% 100%, 0% 100%); }
+.trade-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.trade-actions button { border: 0; border-radius: 12px; padding: 12px 10px; font-weight: 800; letter-spacing: 0.04em; cursor: pointer; color: #fff; }
+.long-btn { background: #10b981; } .short-btn { background: #ef4444; } .close-btn { background: #3b82f6; }

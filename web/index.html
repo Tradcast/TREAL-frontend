@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TREAL - Tauri</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><div class="brand-dot"></div><h1>TREAL</h1></div>
+        <p class="tagline">Tauri + Rust desktop development build</p>
+        <nav class="page-nav">
+          <button class="nav-btn active" data-target="intro">Introduction</button>
+          <button class="nav-btn" data-target="setup">Setup</button>
+          <button class="nav-btn" data-target="trading">Trading</button>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="page active" id="intro">
+          <h2>Welcome to TREAL</h2>
+          <div class="card"><h3>Membership Status</h3><p id="premium-status">Premium active: 28 days remaining.</p></div>
+        </section>
+        <section class="page" id="setup">
+          <h2>Setup</h2>
+          <form id="setup-form" class="setup-form">
+            <label>Email<input type="email" name="email" required /></label>
+            <label>Bybit API Key<input type="text" name="bybitApiKey" required /></label>
+            <label>TREAL Access Token<input type="password" name="trealAccessToken" required /></label>
+            <button type="submit">Save</button>
+          </form>
+          <p class="muted" id="setup-feedback"></p>
+        </section>
+        <section class="page" id="trading">
+          <div class="trade-layout">
+            <header class="trade-header panel">
+              <div class="trade-brand"><div class="trade-logo">T</div><div><h2>TREAL Trade Area</h2><p id="trade-status">Connected (development mock)</p></div></div>
+              <button id="claim-exit-btn" class="exit-btn">Claim & Exit</button>
+            </header>
+            <div class="trade-stats-grid">
+              <div class="panel stat"><span>Leverage</span><strong>20x</strong></div>
+              <div class="panel stat"><span>Total PnL</span><strong id="pnl-value" class="profit">+0.00%</strong></div>
+              <div class="panel stat"><span>Balance</span><strong id="balance-value">0.00</strong></div>
+            </div>
+            <div class="panel chart-panel"><div class="chart-placeholder"><div class="chart-line"></div></div></div>
+            <div class="trade-balance-grid">
+              <div class="panel stat"><span>Free Balance</span><strong id="free-balance-value">0.00</strong></div>
+              <div class="panel stat"><span>In Position</span><strong id="in-position-value">0.00</strong></div>
+            </div>
+            <div class="trade-actions">
+              <button id="long-btn" class="long-btn">LONG</button>
+              <button id="short-btn" class="short-btn">SHORT</button>
+              <button id="close-btn" class="close-btn">CLOSE</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./renderer.js"></script>
+  </body>
+  </html>
